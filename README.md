@@ -9,8 +9,11 @@ A eficiência e a garantia do funcionamento do laboratório depende de condiçõ
 
 # **Funcionamento**
 
-O monitoramento será feito a partir de dados obtidos de sensores de temperatura e umidade localizados no laboratório, conectados a um ESP32, o qual poderá se comunicar com um segundo ESP32 via rede Wi-Fi. Este enviará os dados constantemente atualizados via comunicação serial com um STM32F407, conectado a um notebook, por meio do qual será possível acompanhar as condições do ambiente do laboratório.
+O monitoramento será feito a partir de dados obtidos do sensor DHT11 de temperatura e umidade localizado no laboratório, conectados a uma Discovery (STM32F407), a qual comunica-se com um ESP32 via UART para envio dos dados colhidos dos sensores. Este ESP32, estando conectado via Wi-Fi a uma rede a ser determinada, enviará os dados a um servidor online (ThingsSpeak) o qual mostrará gráficos em tempo real dos valores medidos pelo sensor, por meio dos quais será possível acompanhar as condições do ambiente do laboratório.
 
 # **Desenvolvimento**
 
-Para a implementação do projeto, será utilizada a IDE STM32CubeIDE, um kit de desenvolvimento STM32F407VG - STMicroelectronics, dois microcontroladores ESP32 e os sensores de temperatura e umidade (modelos a serem definidos).
+Para a implementação do projeto, será utilizada a IDE STM32CubeIDE, um kit de desenvolvimento STM32F407VG - STMicroelectronics, um microcontrolador ESP32 e o sensore DHT11 de temperatura e umidade. O conjunto será montado de modo compacto e ajustado em um compartimento o qual será alocado em uma posição estrtégica no labortório.
+![DiagramaBlocos drawio](https://user-images.githubusercontent.com/55112024/169420858-06cee869-8e8e-402d-8565-bc252f802b86.png)
+![Fluxograma drawio](https://user-images.githubusercontent.com/55112024/169420860-c32dc24a-7b9b-49dc-b0a4-82e51b6c7ea0.png)
+
