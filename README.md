@@ -18,3 +18,8 @@ Para a implementação do projeto, será utilizada a IDE STM32CubeIDE, um kit de
 ![DiagramaBlocos drawio](https://user-images.githubusercontent.com/55112024/169420858-06cee869-8e8e-402d-8565-bc252f802b86.png)
 ![Fluxograma drawio](https://user-images.githubusercontent.com/55112024/169420860-c32dc24a-7b9b-49dc-b0a4-82e51b6c7ea0.png)
 
+# **Tutoriais**
+https://circuitdigest.com/microcontroller-projects/interfacing-esp8266-with-stm32f103c8-stm32-to-create-a-webserver
+https://controllerstech.com/using-dht11-sensor-with-stm32/
+https://controllerstech.com/data-logger-using-stm32-and-esp8266/
+
