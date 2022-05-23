@@ -1,0 +1,6 @@
+2022-05-20 14:52:11,422 [INFO] Activator:170 - 
+
+
+2022-05-20 14:52:11,424 [INFO] Activator:171 - !SESSION log4j initialized
+2022-05-20 14:53:45,717 [ERROR] ApiDbMcu:1496 - Can't use Application install path:
+2022-05-20 14:53:51,255 [WARN] RulesReader:54 - Compatibility file://mcu/compatibility.xml not found
