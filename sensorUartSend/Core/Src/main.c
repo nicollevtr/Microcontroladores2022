@@ -19,6 +19,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include <stdio.h>
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -70,8 +71,8 @@ void delay (uint16_t time)
 uint8_t Rh_byte1, Rh_byte2, Temp_byte1, Temp_byte2;
 uint16_t SUM, RH, TEMP;
 
-float Temperature = 0;
-float Humidity = 0;
+int Temperature = 0;
+int Humidity = 0;
 uint8_t Presence = 0;
 
 void Set_Pin_Output (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)
@@ -196,43 +197,30 @@ int main(void)
 	  TEMP = Temp_byte1;
 	  RH = Rh_byte1;
 
-	  Temperature = (float) TEMP;
-	  Humidity = (float) RH;
+	  Temperature = (int) TEMP;
+	  Humidity = (int) RH;
+/*
+		 uint8_t buffer[10];
+		 sprintf(buffer, "Temperatura %d\ Umidade %d\r\n\n", Temperature,Humidity);
+	  	 HAL_UART_Transmit(&huart2,buffer,strlen(buffer), HAL_MAX_DELAY);
+		  HAL_Delay(3000);*/
+
 	  if (Temperature<25)
 	  	  {
-		//  HAL_GPIO_TogglePin(GPIOD, BLUE_Pin);
-		 HAL_GPIO_WritePin(GPIOD, BLUE_Pin, GPIO_PIN_SET);
-		 HAL_GPIO_WritePin(GPIOD, RED_Pin, GPIO_PIN_RESET);
-  	  	 //uint8_t buffer;
-  	  	//buffer=80;
-      /* USER CODE BEGIN 3 */
-  	    //HAL_UART_Transmit(&huart2, &TEMP, sizeof(TEMP), HAL_MAX_DELAY);
-	  	    HAL_UART_Transmit(&huart2,"1 \n",3, HAL_MAX_DELAY);
-
+		 uint8_t buffer[10];
+		 sprintf(buffer, "Temperatura %d\ Umidade %d\r\n\n", Temperature,Humidity);
+	  	 HAL_UART_Transmit(&huart2,buffer,strlen(buffer), HAL_MAX_DELAY);
 	  	  }
 	  else
 	  {
-		 // HAL_GPIO_TogglePin(GPIOD, RED_Pin);
-		  HAL_GPIO_WritePin(GPIOD, RED_Pin, GPIO_PIN_SET);
-		  HAL_GPIO_WritePin(GPIOD, BLUE_Pin, GPIO_PIN_RESET);
-		  //uint8_t buffer;
-	  	 // 	buffer=10;
-	      /* USER CODE BEGIN 3 */
-	  	    //HAL_UART_Transmit(&huart2, &TEMP, sizeof(TEMP), HAL_MAX_DELAY);
-	  	    HAL_UART_Transmit(&huart2,"2 \n",3, HAL_MAX_DELAY);
 
-
+		 uint8_t bufferr[10];
+		 sprintf(bufferr, "Temperatura %d\n Umidade %d\r\n\n", Temperature,Humidity);
+		  	    HAL_UART_Transmit(&huart2,bufferr,strlen(bufferr), HAL_MAX_DELAY);
 	  }
 
-	  HAL_Delay(3000);
-//Value_Buf[0]= Temperature;
-//Value_Buf[1]= Humidity;
-//ESP_Send_Multi("MY2LX8HJ4J9KKCVO", 2, Value_Buf);
-//HAL_Delay(15000);
-	  	  	/* uint8_t buffer;
-	       USER CODE BEGIN 3
-	  	    HAL_UART_Receive(&huart2, &buffer, sizeof(buffer), HAL_MAX_DELAY); //retorna o cara que eu escrevo no terminal
-	  	    HAL_UART_Transmit(&huart2, &buffer, sizeof(buffer),HAL_MAX_DELAY); */
+ HAL_Delay(3000);
+
   }
   /* USER CODE END 3 */
 }
