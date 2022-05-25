@@ -18,8 +18,22 @@ Para a implementação do projeto, será utilizada a IDE STM32CubeIDE, um kit de
 ![DiagramaBlocos drawio](https://user-images.githubusercontent.com/55112024/169420858-06cee869-8e8e-402d-8565-bc252f802b86.png)
 ![Fluxograma drawio](https://user-images.githubusercontent.com/55112024/169420860-c32dc24a-7b9b-49dc-b0a4-82e51b6c7ea0.png)
 
-# **Tutoriais**
-https://circuitdigest.com/microcontroller-projects/interfacing-esp8266-with-stm32f103c8-stm32-to-create-a-webserver
-https://controllerstech.com/using-dht11-sensor-with-stm32/
-https://controllerstech.com/data-logger-using-stm32-and-esp8266/
+# **Links úteis**
+
+Pinagem e comandos para conexão WiFi: https://circuitdigest.com/microcontroller-projects/interfacing-esp8266-with-stm32f103c8-stm32-to-create-a-webserver
+
+Comandos TCP/IP AT https://docs.espressif.com/projects/esp-at/en/latest/esp32/AT_Command_Set/TCP-IP_AT_Commands.html#cmd-start
+
+Leitura do sensor DHT11 com a discovery: https://controllerstech.com/using-dht11-sensor-with-stm32/
+
+Enviar dados via UART da discovery para onectar a ESP32 a rede WiFi e então enviar dados para a webpage: https://controllerstech.com/data-logger-using-stm32-and-esp8266/
+
+STM32F407 User manual https://www.st.com/resource/en/user_manual/dm00039084-discovery-kit-with-stm32f407vg-mcu-stmicroelectronics.pdf
+
+ESP32 reference manual https://www.espressif.com/sites/default/files/documentation/esp32_technical_reference_manual_en.pdf
+
+# **THINGSPEAK**
+
+Link para acessar os dados em tempo real: https://thingspeak.com/channels/1741440
+
 
