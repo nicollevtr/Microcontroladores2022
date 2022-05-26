@@ -100,7 +100,7 @@ void DHT11_Start (void)
 {
 	Set_Pin_Output (DHT11_PORT, DHT11_PIN);  // set the pin as output
 	HAL_GPIO_WritePin (DHT11_PORT, DHT11_PIN, 0);   // pull the pin low
-	HAL_Delay(18);   // wait for 18ms
+	delay(18000);   // wait for 18ms
     HAL_GPIO_WritePin (DHT11_PORT, DHT11_PIN, 1);   // pull the pin high
     delay(20);   // wait for 20us
 	Set_Pin_Input(DHT11_PORT, DHT11_PIN);    // set as input
@@ -109,7 +109,6 @@ void DHT11_Start (void)
 uint8_t DHT11_Check_Response (void)
 {
 	uint8_t Response = 0;
-	int contResponse=0;
 	delay (40);
 	if (!(HAL_GPIO_ReadPin (DHT11_PORT, DHT11_PIN)))
 	{
@@ -117,7 +116,6 @@ uint8_t DHT11_Check_Response (void)
 		if ((HAL_GPIO_ReadPin (DHT11_PORT, DHT11_PIN))) Response = 1;
 		else Response = -1; // 255
 	}
-	contResponse++;
 	while ((HAL_GPIO_ReadPin (DHT11_PORT, DHT11_PIN)));   // wait for the pin to go low //travando aq
 
 	return Response;
@@ -179,6 +177,20 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start(&htim6);
+  char data[80];
+    // estabelecendo a conexao
+      HAL_UART_Transmit(&huart2,"AT+RST\r\n",8, HAL_MAX_DELAY);
+      //HAL_Delay(1000);
+      HAL_UART_Transmit(&huart2,"AT\r\n",4, HAL_MAX_DELAY);
+      //HAL_Delay(1000);
+      HAL_UART_Transmit(&huart2,"AT+CWMODE=1\r\n",13, HAL_MAX_DELAY);
+      //HAL_Delay(1000);
+      sprintf (data, "AT+CWJAP=\"%s\",\"%s\"\r\n", "Nicolle", "nicolle789");
+      //sprintf (data, "AT+CWJAP=\"%s\"\r\n", "IME-Servicos");
+      HAL_UART_Transmit(&huart2,data,strlen(data), HAL_MAX_DELAY);
+      //HAL_Delay(1000);
+      HAL_UART_Transmit(&huart2,"AT+CIPMUX=0\r\n",13, HAL_MAX_DELAY);
+      //HAL_Delay(1000);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -192,6 +204,7 @@ int main(void)
 	  DHT11_Start();
 	  cont1++;
 	  Presence = DHT11_Check_Response();
+	  cont1++;
 	  Rh_byte1 = DHT11_Read ();
 	  Rh_byte2 = DHT11_Read ();
 	  Temp_byte1 = DHT11_Read ();
