@@ -36,4 +36,9 @@ ESP32 reference manual https://www.espressif.com/sites/default/files/documentati
 
 Link para acessar os dados em tempo real: https://thingspeak.com/channels/1741440
 
+# **Firmware**
+Funcionamento do código: 
+
+![firmware_flowchart](https://user-images.githubusercontent.com/55112024/172197054-da6009d7-7fe3-42da-a778-df8585bba426.png)
+
 
