@@ -13,9 +13,9 @@ O monitoramento será feito a partir de dados obtidos do sensor DHT11 de tempera
 
 # **Desenvolvimento**
 
-Para a implementação do projeto, será utilizada a IDE STM32CubeIDE, um kit de desenvolvimento STM32F407VG - STMicroelectronics, um microcontrolador ESP32 e o sensore DHT11 de temperatura e umidade. O conjunto será montado de modo compacto e ajustado em um compartimento o qual será alocado em uma posição estrtégica no labortório.
+Para a implementação do projeto, será utilizada a IDE STM32CubeIDE, um kit de desenvolvimento STM32F407VG - STMicroelectronics, um microcontrolador ESP32 e o sensore DHT11 de temperatura e umidade.
 
-![DiagramaBlocos drawio](https://user-images.githubusercontent.com/55112024/169420858-06cee869-8e8e-402d-8565-bc252f802b86.png)
+![DiagramaBlocos drawio](https://user-images.githubusercontent.com/55112024/172491735-d11222b1-8d1b-40da-b331-bee443a3b8af.png)
 ![Fluxograma drawio](https://user-images.githubusercontent.com/55112024/169420860-c32dc24a-7b9b-49dc-b0a4-82e51b6c7ea0.png)
 
 # **Links úteis**
