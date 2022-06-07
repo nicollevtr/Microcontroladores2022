@@ -41,4 +41,6 @@ Funcionamento do código:
 
 ![firmware_flowchart](https://user-images.githubusercontent.com/55112024/172197054-da6009d7-7fe3-42da-a778-df8585bba426.png)
 
-
+# **Execução do projeto**
+Video ilustrando o funcionamento do projeto:
+https://user-images.githubusercontent.com/55112024/172497442-ed9a13f2-f8f0-4922-9a55-5f035d6d0c95.mp4
