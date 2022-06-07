@@ -180,17 +180,16 @@ int main(void)
   char data[80];
     // estabelecendo a conexao
       HAL_UART_Transmit(&huart2,"AT+RST\r\n",8, HAL_MAX_DELAY);
-      //HAL_Delay(1000);
       HAL_UART_Transmit(&huart2,"AT\r\n",4, HAL_MAX_DELAY);
-      //HAL_Delay(1000);
       HAL_UART_Transmit(&huart2,"AT+CWMODE=1\r\n",13, HAL_MAX_DELAY);
-      //HAL_Delay(1000);
-      sprintf (data, "AT+CWJAP=\"%s\",\"%s\"\r\n", "Nicolle", "nicolle789");
-      //sprintf (data, "AT+CWJAP=\"%s\"\r\n", "IME-Servicos");
+      //HAL_UART_Transmit(&huart2,"AT+CWQAP\r\n",10, HAL_MAX_DELAY);
+      sprintf (data, "AT+CWJAP=\"%s\",\"%s\"\r\n", "IME-Servicos", "");
+      //sprintf (data, "AT+CWJAP=\"%s\"\r\n", "Nicolle");
+      //sprintf(data, "AT+CWJAP=\"%s\",\"%s\"\r\n", "teste","12345678");
       HAL_UART_Transmit(&huart2,data,strlen(data), HAL_MAX_DELAY);
-      //HAL_Delay(1000);
       HAL_UART_Transmit(&huart2,"AT+CIPMUX=0\r\n",13, HAL_MAX_DELAY);
-      //HAL_Delay(1000);
+      int contt=0;
+      contt++;
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -216,26 +215,6 @@ int main(void)
 
 	  Temperature = (int) TEMP;
 	  Humidity = (int) RH;
-/*
-		 uint8_t buffer[10];
-		 sprintf(buffer, "Temperatura %d\ Umidade %d\r\n\n", Temperature,Humidity);
-	  	 HAL_UART_Transmit(&huart2,buffer,strlen(buffer), HAL_MAX_DELAY);
-		  HAL_Delay(3000);*/
-/*
-	  if (Temperature<25)
-	  	  {
-		 uint8_t buffer[10];
-		 sprintf(buffer, "Temperatura %d\ Umidade %d\r\n\n", Temperature,Humidity);
-	  	 HAL_UART_Transmit(&huart2,buffer,strlen(buffer), HAL_MAX_DELAY);
-	  	  }
-	  else
-	  {
-
-		 uint8_t bufferr[10];
-		 sprintf(bufferr, "Temperatura %d\n Umidade %d\r\n\n", Temperature,Humidity);
-		  	    HAL_UART_Transmit(&huart2,bufferr,strlen(bufferr), HAL_MAX_DELAY);
-	  }*/
-
 	  char local_buf[500] = {0};
 	  	  		  	char local_buf2[30] = {0};
 	  	  		  	char local_buf3[50] = {0};
@@ -271,6 +250,8 @@ int main(void)
 	  	  		  	bufclr(local_buf);
 	  	  		  	bufclr(local_buf2);
 	  	  		    HAL_Delay(15000);//delay necessario para atualizar
+	  	  		    int cont=0;
+	  	  		    cont++;
   }
   /* USER CODE END 3 */
 }
