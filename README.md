@@ -1,4 +1,8 @@
 # Microcontroladores2022
+# **Código do projeto principal**
+
+Projeto principal "sendData".
+
 # **Proposta de projeto** 
 
 Utilização de microcontroladores conectados para o monitoramento das condições de temperatura e umidade no ambiente do Laboratório de Computação.
